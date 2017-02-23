@@ -39,7 +39,7 @@ void particlesTwoApp::setup()
 
 void particlesTwoApp::mouseDown( MouseEvent event )
 {
-    glm::vec2 tempAcc = glm::vec2(ci::randFloat(-5, 5), ci::randFloat(-5, 1));
+    glm::vec2 tempAcc = glm::vec2(ci::randFloat(-2, 2), ci::randFloat(-3, 0));
     
     auto p = ParticleSystem::create( event.getPos(), 90, tempAcc);
     
