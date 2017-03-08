@@ -23,6 +23,7 @@ class videoPlayerApp : public App {
     void onVideoEnded();
     
     VideoPlayerRef mPlayer;
+    bool paused = false;
     int mPlayCount;
 };
 
@@ -41,6 +42,17 @@ void videoPlayerApp::mouseDown( MouseEvent event )
 void videoPlayerApp::keyDown(cinder::app::KeyEvent event)
 {
     mPlayer->openVideo(event);
+    if (event.getChar() == 'p') {
+        if (paused)
+        {
+            paused = false;
+            mPlayer->play();
+        } else
+        {
+            paused = true;
+            mPlayer->stop();
+        }
+    }
 }
 
 void videoPlayerApp::onVideoEnded()
