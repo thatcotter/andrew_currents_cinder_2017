@@ -56,7 +56,7 @@ void wavesApp::mouseDown( MouseEvent event )
                   {
                       for (int j = 0; j < targets.size(); j++)
                       {
-                          cout << "finish: " << j << endl;
+//                          cout << "finish: " << j << endl;
                           timeline().apply( &targets[j], vec2( (j*50)+10, ci::app::getWindowCenter().y+100 ),  1.f , EaseInExpo()).delay( float(j)/8 );
                       }
                       
